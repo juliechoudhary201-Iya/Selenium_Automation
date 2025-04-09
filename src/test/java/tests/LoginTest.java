@@ -5,19 +5,35 @@ import org.testng.annotations.Test;
 
 import base.BaseTest;
 import pages.LoginPage;
+import utils.ExtentReportManager;
+import utils.Log;
 
 public class LoginTest extends BaseTest{
 	
 	@Test
 	public void validLogin()
 	{
-		LoginPage loginpage = new LoginPage(driver);
-		
-		loginpage.Username("admin@yourstore.com");
-		loginpage.Password("admin");
-		loginpage.Login();
-		
-		System.out.println("This is the title of page: "+ driver.getTitle());
-		Assert.assertEquals(driver.getTitle(), "Just a moment...");
+			
+		Log.info("Starting login test...");
+		test = ExtentReportManager.createTest("Login Test - ");
+
+		test.info("Navigating to URL");
+		LoginPage loginPage = new LoginPage(driver);
+
+		Log.info("Adding credentials");
+		test.info("Adding Credentails");
+		loginPage.Username("admin@yourstore.com");
+		loginPage.Password("admin");
+//		loginPage.enterUsername(username);
+//		loginPage.enterPassword(password);
+		test.info("Clicking on Login button");
+		loginPage.Login();
+
+		System.out.println("Title of the page is : " + driver.getTitle());
+		Log.info("Verifying page title");
+		test.info("Verifying page title");
+		Assert.assertEquals(driver.getTitle(), "Just a moment...1234");
+
+		test.pass("Login Successful");
 	}
 }

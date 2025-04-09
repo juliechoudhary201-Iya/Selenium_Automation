@@ -3,6 +3,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import utils.Log;
+
 public class LoginPage {
 	
 	private WebDriver driver;
@@ -28,6 +30,7 @@ public class LoginPage {
 	}
 	public void Login()
 	{
+		Log.info("Cicking Login button...");
 		driver.findElement(Login).click();
 		
 	}
