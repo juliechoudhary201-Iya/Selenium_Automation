@@ -32,7 +32,7 @@ public class LoginTest extends BaseTest {
 		return data;
 	}
 
-	//@DataProvider(name = "LoginData2") ..........To get DATA from Data Provider Method
+	//@DataProvider(name = "LoginData2") ..........To get DATA from DataProvider Method
 	//public Object[][] getData() {
 
 		//return new Object[][] { { "user1", "pass1" }, { "user2", "pass2" }, { "user3", "pass3" } };
@@ -44,6 +44,7 @@ public class LoginTest extends BaseTest {
 	// @Test
 	// @Parameters({"username","password"}) .......To get DATA from testngData.xml
 
+	//Move to Dev branch
 	public void validLogin(String username, String password) {
 
 		Log.info("Starting login test...");
